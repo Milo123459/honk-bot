@@ -29,7 +29,7 @@ client.on('message', async (message: Message) => {
 				`I can't honk that many times. ${honkAmount} is too many honks.`,
 			);
 			try {
-				await message.delete();
+				return await message.delete();
 			} catch {}
 		}
 		if (shouldIHonk == true)
