@@ -25,8 +25,8 @@ client.on('message', async (message: Message) => {
 			}
 		});
 		if (shouldIHonk == true)
-			return message.channel.send(
-				`${message.member || message.author}, honk. ${
+			return message.reply(
+				`honk. ${
 					honkAmount == 1 ? '' : `[x${honkAmount}]`
 				}`.trim(),
 			);
