@@ -6,13 +6,15 @@ A discord bot that focus' on the simple things, like honking.
 
 - Have NodeJS 12.x (or higher) installed
 - Run `npm i -g yarn`
-- Fill out `src/config.ts` (Replace the string with the token in it with your token)
+- Make a `src/config.ts`
+- In the `src/config.ts` paste in `export const token: string = 'put your discord bot token here!';`
 - Run `yarn start` - Voila! Done
 
 **Features**
 
 - Responds to honk, not emojis with honk in them
 - It can **honk**
+- Too many honks, if there are more then 7 honks it'll say there are too many.
 
 **Note:**
 
