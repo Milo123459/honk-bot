@@ -13,3 +13,7 @@ A discord bot that focus' on the simple things, like honking.
 
 - Responds to honk, not emojis with honk in them
 - It can **honk**
+
+**Note:**
+
+If you have a suggestion, please make an issue about it. Thanks :D
