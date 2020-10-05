@@ -24,7 +24,12 @@ client.on('message', async (message: Message) => {
 				return;
 			}
 		});
-		if(shouldIHonk == true && honkAmount >= 7) return message.reply(`I can't honk that many times. ${honkAmount} is too many.`) 
+		if(shouldIHonk == true && honkAmount >= 7) {
+			message.reply(`I can't honk that many times. ${honkAmount} is too many honks.`);
+			try {
+				await message.delete();
+			} catch {};
+		}
 		if (shouldIHonk == true)
 			return message.reply(
 				`honk. ${
