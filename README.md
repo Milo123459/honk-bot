@@ -6,7 +6,7 @@ A discord bot that focus' on the simple things, like honking.
 
 - Have NodeJS 12.x (or higher) installed
 - Run `npm i -g yarn`
-- Fill out `src/config.json`
+- Fill out `src/config.ts` (Replace the string with the token in it with your token)
 - Run `yarn start` - Voila! Done
 
 **Features**
