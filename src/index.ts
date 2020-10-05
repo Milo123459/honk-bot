@@ -5,7 +5,7 @@ const client: Client = new Client({
 	messageSweepInterval: 180,
 	ws: { intents: Intents.NON_PRIVILEGED },
 });
-import * as config from "./config";
+import * as config from './config';
 client.on('ready', () => console.log(`${client.user.tag} is ready to honk.`));
 client.on('message', async (message: Message) => {
 	if (message.author.bot || !message.guild) return;
@@ -15,12 +15,21 @@ client.on('message', async (message: Message) => {
 			arg.toLowerCase().includes('honk'),
 		);
 		let shouldIHonk: boolean;
+		let honkAmount: number = 0;
 		honkArgs.map((arg: string) => {
 			if (arg.startsWith(`<:`) && arg.endsWith(`>`)) return;
-			else return (shouldIHonk = true);
+			else {
+				shouldIHonk = true;
+				honkAmount++;
+				return;
+			}
 		});
 		if (shouldIHonk == true)
-			return message.channel.send(`${message.member || message.author}, honk.`);
+			return message.channel.send(
+				`${message.member || message.author}, honk. ${
+					honkAmount == 1 ? '' : `[x${honkAmount}]`
+				}`.trim(),
+			);
 	}
 });
 client.login(config.token);

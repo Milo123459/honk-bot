@@ -1,2 +1,1 @@
-export const token: string =
-	'your epic and cool token goes here';
+export const token: string = 'put. your. token. here.';
