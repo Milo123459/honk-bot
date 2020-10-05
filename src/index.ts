@@ -24,17 +24,17 @@ client.on('message', async (message: Message) => {
 				return;
 			}
 		});
-		if(shouldIHonk == true && honkAmount >= 7) {
-			message.reply(`I can't honk that many times. ${honkAmount} is too many honks.`);
+		if (shouldIHonk == true && honkAmount >= 7) {
+			message.reply(
+				`I can't honk that many times. ${honkAmount} is too many honks.`,
+			);
 			try {
 				await message.delete();
-			} catch {};
+			} catch {}
 		}
 		if (shouldIHonk == true)
 			return message.reply(
-				`honk. ${
-					honkAmount == 1 ? '' : `[x${honkAmount}]`
-				}`.trim(),
+				`honk. ${honkAmount == 1 ? '' : `[x${honkAmount}]`}`.trim(),
 			);
 	}
 });
